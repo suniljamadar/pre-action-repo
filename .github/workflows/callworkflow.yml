@@ -1,0 +1,11 @@
+name: "Calling another repo workflow file"
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+  release:
+    types: [edited,published]
+
+jobs:
+  notifications:
+    uses: https://github.com/suniljamadar/action-testing/blob/main/.github/workflows/test.yml@v2
