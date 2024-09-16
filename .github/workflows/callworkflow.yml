@@ -8,4 +8,4 @@ on:
 
 jobs:
   notifications:
-    uses: suniljamadar/action-testing/.github/workflows/test.yml@v2
+    uses: suniljamadar/action-testing/.github/workflows/test.yml@main
