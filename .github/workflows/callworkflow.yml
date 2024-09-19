@@ -1,6 +1,6 @@
 name: "Concurrency Test"
 on:
-  push:
+  pull_request:
     branches: [main]
 # concurrency:
 #   # group: build and test
