@@ -2,21 +2,28 @@ name: "Concurrency Test"
 on:
   push:
     branches: [main]
-concurrency:
-  group: Build-${{ github.ref }}
-  cancel-in-progress: true
+# concurrency:
+#   group: Build-${{ github.ref }}
+#   cancel-in-progress: true
 
 jobs:
-   build-and-test-on-pr:
-     name: build and test on pull request
+   build:
+     name: build on push
      runs-on: ubuntu-latest
+     concurrency:
+       group: Build-${{ github.ref }}
+       cancel-in-progress: true
      steps:
        - name: Build the code
          run: |
            echo "starting code build"
            sleep 1m
            echo "Finished code build"
-           
+
+   test:
+     name: test on push
+     runs-on: ubuntu-latest
+     steps:
        - name: Test the code
          run: |
            echo "starting code build"
