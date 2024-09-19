@@ -14,12 +14,12 @@ jobs:
        - name: Build the code
          run: |
            echo "starting code build"
-           sleep 2m
+           sleep 1m
            echo "Finished code build"
            
        - name: Test the code
          run: |
            echo "starting code build"
-           sleep 2m
+           sleep 1m
            echo "Finished code build"
            echo ${{ github.workflow }}-${{ github.ref }}
