@@ -1,11 +1,24 @@
-name: "Calling another repo workflow file"
+name: "Concurrency Test"
 on:
   push:
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]+'
-  release:
-    types: [edited, published]
+    branches: [main]
+# concurrency:
+#   # group: build and test
+#   # cancel-in-progress: true
 
 jobs:
-  notifications:
-    uses: suniljamadar/action-testing/.github/workflows/test.yml@v2
+   build-and-test-on-pr:
+     name: build and test on pull request
+     runs-on: ubuntu-latest
+     steps:
+       - name: Build the code
+         run: |
+           echo "starting code build"
+           sleep 2m
+           echo "Finished code build"
+           
+       - name: Test the code
+         run: |
+           echo "starting code build"
+           sleep 2m
+           echo "Finished code build"
