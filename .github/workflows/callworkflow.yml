@@ -22,4 +22,4 @@ jobs:
            echo "starting code build"
            sleep 1m
            echo "Finished code build"
-           echo ${{ github.workflow }}-${{ github.ref }}
+           echo ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref }}
