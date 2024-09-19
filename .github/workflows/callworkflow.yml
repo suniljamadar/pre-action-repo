@@ -12,7 +12,7 @@ jobs:
      runs-on: ubuntu-latest
      concurrency:
        group: Build-${{ github.ref }}
-       cancel-in-progress: true
+       cancel-in-progress: ${{ contains(github.ref, 'main/') }}
      steps:
        - name: Build the code
          run: |
