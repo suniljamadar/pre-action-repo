@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 concurrency:
-  group: build and test
+  group: Build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
