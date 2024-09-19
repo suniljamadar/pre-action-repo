@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [main]
 concurrency:
-#   # group: build and test
+  group: build and test
   cancel-in-progress: true
 
 jobs:
