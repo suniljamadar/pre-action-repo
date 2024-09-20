@@ -18,7 +18,7 @@ jobs:
          id: build-output
          run: |
            echo "finished code build"
-           echo "name=sunil" >> "${{ GITHUB_OUTPUT }}"
+           echo "name=sunil" >> "$GITHUB_OUTPUT"
        - name: Check output
          run: |
            echo "output is ${{ steps.build-output.outputs.name }}"
