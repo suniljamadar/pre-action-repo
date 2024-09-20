@@ -31,3 +31,8 @@ jobs:
        - name: Test the code
          run: |
            echo "tested code build"
+       - name: check build job ouput
+         run: |
+           echo "tested code build"
+           echo "build job output is ${{ steps.build-output.outputs.name }}"
+          
